@@ -1,0 +1,19 @@
+Prove that if 
+\[
+\frac{a_{0}}{n+1}+\frac{a_{1}}{n}+\cdots+\frac{a_{n-1}}{2}+a_{n}=0,
+\]
+then the polynomial equation 
+\[
+a_{0}x^{n}+a_{1}x^{n-1}+\cdots+a_{n-1}x+a_{n}=0
+\]
+ has at least one root in $(0,1)$.
+
+ \begin{proof}
+     Begin by letting \[f(x)=\frac{a_{0}x^{n+1}}{n+1}+\frac{a_{1}x^{n}}{n}+\cdots+\frac{a_{n-1}x^2}{2}+xa_{n}.\] See that 
+     \[
+    f^{\prime}(x)=a_{0}x^{n}+a_{1}x^{n-1}+\cdots+a_{n-1}x+a_{n}.
+    \] Now because $f(0),f(1)=0$, the mean value theorem guarantees that the equation \[
+a_{0}x^{n}+a_{1}x^{n-1}+\cdots+a_{n-1}x+a_{n}=0
+\]
+ has at least one root in $(0,1)$.
+ \end{proof}
