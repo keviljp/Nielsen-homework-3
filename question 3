@@ -1,0 +1,47 @@
+Suppose that $f:[a,b]\rightarrow\mathbb{R}$ is continuous. Let 
+\[
+P_{n}:=\left\{ a,a+\frac{b-a}{n},a+\frac{2(b-a)}{n},\ldots,a+\frac{(n-1)(b-a)}{n},b\right\} .
+\]
+If $x_{k}^{\ast}$ is any point in the interval $\left[\frac{(k-1)(b-a)}{n},\frac{k(b-a)}{n}\right]$,
+$k=1,\ldots,n$, show that 
+\[
+L\left(f,P_{n}\right)\leq\sum_{k=1}^{n}f\left(x_{k}^{\ast}\right)\frac{(b-a)}{n}\leq U\left(f,P_{n}\right).
+\]
+Then show that 
+\[
+\lim_{n\to\infty}\sum_{k=1}^{n}f\left(x_{k}^{\ast}\right)\frac{(b-a)}{n}=\int_{a}^{b}f(x)\,dx.
+\]
+
+\begin{proof}
+    Define \[M_k:= sup\left\{f(x):x\in\left[\frac{(k-1)(b-a)}{n},\frac{k(b-a)}{n}\right],k\in\{1,\ldots,n\}\right\},\] and
+    \[m_k:= inf\left\{f(x):x\in\left[\frac{(k-1)(b-a)}{n},\frac{k(b-a)}{n}\right],k\in\{1,\ldots,n\}\right\}.\] Then $m_k\leq f(x^{\ast})\leq M_k$. Because the length of any sub interval in $P_n$ for any $n$ is $\frac{(b-a)}{n}$, \[
+L\left(f,P_{n}\right)\leq\sum_{k=1}^{n}f\left(x_{k}^{\ast}\right)\frac{(b-a)}{n}\leq U\left(f,P_{n}\right).
+\] Now, because $f$ is uniformly continuous on $[a,b]$, let $\epsilon,\delta>0$. Then for any $x,y\in[a,b]$, $\vert f(x)-f(y)\vert<\frac{\epsilon}{b-a},$ whenever, $\vert x-y\vert<\delta$. With $P_n$ as defined, $\frac{(b-a)}{n}<\delta$ for large enough $n$ which makes $M_k-m_k<\frac{\epsilon}{b-a}$. Since 
+\begin{equation*}
+\begin{aligned}
+     U\left(f,P_{n}\right)-L\left(f,P_{n}\right)=&\sum_{k=1}^{n}f\left(x_{k}^{\ast}\right)\frac{(b-a)}{n}\\
+     &<\epsilon
+\end{aligned}
+\end{equation*}
+Then,
+\begin{equation*}
+\begin{aligned}
+     \left\vert U(f,P_{n})-\int_{a}^{b}f\,dx\right\vert
+    &\leq 
+\left\vert U\left(f,P_{n}\right)-L\left(f,P_{n}\right)\right\vert\\
+     &<\epsilon.
+\end{aligned}
+\end{equation*}
+ This makes, \[\lim_{n\to\infty}U(f,P_{n})=\int_{a}^{b}f\,dx.\] Similarly, 
+ \begin{equation*}
+\begin{aligned}
+    \left\vert\int_{a}^{b}f\,dx-L(f,P_{n})\right\vert
+    &\leq \left\vert U\left(f,P_{n}\right)-L\left(f,P_{n}\right)\right\vert\\
+     &<\epsilon,
+\end{aligned}
+\end{equation*}
+and \[\lim_{n\to\infty}L(f,P_{n})=\int_{a}^{b}f\,dx.\]
+Then, by the squeeze theorem, \[
+\lim_{n\to\infty}\sum_{k=1}^{n}f\left(x_{k}^{\ast}\right)\frac{(b-a)}{n}=\int_{a}^{b}f(x)\,dx.
+\]
+\end{proof}
