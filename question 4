@@ -1,0 +1,11 @@
+Carefully prove that 
+\[
+\frac{2\pi^{2}}{9}\leq\int_{\pi/6}^{\pi/2}\frac{2x}{\sin x}\,dx\leq\frac{4\pi^{2}}{9}.
+\]
+(Note that the fundamental theorem of calculus will not help here
+as the antiderivative of $\frac{2x}{\sin x}$ cannot be computed in
+terms of elementary transcendental functions.)
+
+\begin{proof}
+    First see that, \[f^{\prime}(x)=\frac{d}{dx}2x \csc(x)=2\csc(x)\left(1-x\cot(x)\right).\] For $x\in\left[\frac{\pi}{6},\frac{\pi}{2}\right]$, $f^{\prime}(x)\geq0$. Thus, $f(x)$ achieves its minimum on the given interval at $f^{\prime}(\frac{\pi}{6})=\frac{2\pi}{3}$ and its maximum at $f^{\prime}(\frac{\pi}{3})=\frac{4\pi}{3}.$ With the partition $\mathscr{P}=[a,b]$, $L\left(f,\mathscr{P}\right)=\frac{2\pi^2}{9}$ and $U\left(f,\mathscr{P}\right)=\frac{4\pi^2}{9}$ and we are done.
+\end{proof}
