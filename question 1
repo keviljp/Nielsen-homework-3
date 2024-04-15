@@ -1,0 +1,12 @@
+Carefully show that, given any $\eta>0$, there is a partition $\mathscr{P}$
+of $[a,b]$ for which every subinterval $[x_{j-1},x_{j}]$ has length
+$x_{j}-x_{j-1}$ strictly less than $\eta$. 
+
+\begin{proof}
+    Take $\eta>0$ and an interval $[a,b]$ with $a<b$ and $a,b\in\mathbb{R}$. We define a partition,
+\[
+P_{n}:=\left\{ a,a+\frac{b-a}{n},a+\frac{2(b-a)}{n},\ldots,a+\frac{(n-1)(b-a)}{n},b\right\} 
+\]
+    for $k=1,2,\ldots,n$. We see that every subinterval $\left[a+\frac{(k-1)(b-a)}{n},a+\frac{k(b-a)}{n}\right]$,
+    $k=1,\ldots,n$ has length $\frac{(b-a)}{n}$. Now, because $\lim_{n\to\infty}\frac{(b-a)}{n}=0$, there exists $N\in\mathbb{N}=\frac{(b-a)}{\eta}$ such that for every $n>N$, any subinterval in the power series $P_n$ has length strictly less than $\eta$
+\end{proof}
