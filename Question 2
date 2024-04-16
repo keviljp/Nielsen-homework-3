@@ -1,0 +1,48 @@
+
+Let $f(x)=16x-6x^{2}-2x^{3}+\frac{x^{4}}{2}$, $-3\leq x\leq2$. By
+using only upper or lower sums (or combinations of both), determine
+the exact value of 
+\[
+\int_{-3}^{2}f(x)\,dx.
+\]
+
+\begin{proof}
+    Define a partition $P_n$ as seen in problem 1. Then let \[M_k:=\sup\left\{f(x):x\in\left[a+\frac{(k-1)(b-a)}{n},a+\frac{k(b-a)}{n}\right]\right\}\] and \[m_k:=\inf\left\{f(x):x\in\left[a+\frac{(k-1)(b-a)}{n},a+\frac{k(b-a)}{n}\right]\right\}\] for $k=1,2,\ldots,n$, on the interval $[a,b]$. Then define $U(f,P_n)=\sum_{k=1}^{n}M_k\left(\frac{b-a}{n}\right),$ and $L(f,P_n)=\sum_{k=1}^{n}m_k\left(\frac{b-a}{n}\right).$ With this established, it becomes convenient to break our interval into three sub-intervals to evaluate separately, $[-3,2],[-2,1],[1,2]$. We see that on these intervals, $f(x)$ increases, decreases, and then increases for the entirety of the respective intervals. We know exactly where $M_k$ and $m_k$ are for each sub-interval and can evaluate either $U(f,P_n)$ or $L(f,P_n)$ because of the result in question $3$.\\
+    
+    For $x\in[-3,-2]$, $m_k=f\left(-3+\frac{k}{n}\right)$ because the function is decreasing, $f(x)$ achieves its minimum on the right boundary of each subinterval of the partition. We now evaluate $L(f,P_n)$ on the interval because \[\lim_{n\to\infty}L(f,P_n)=\int_{-3}^{-2}f(x)\,dx\]
+    \begin{equation*}
+        \begin{aligned}
+            L(f,P_n)&=\sum_{k=1}^nf\left(-3+\frac{k}{n}\right)\left(\frac{1}{n}\right)\\
+            &=\sum_{k=1}^n\left(\left(\frac{k}{n}\right)^4-16\left(\frac{k}{n}\right)^3+78\left(\frac{k}{n}\right)^2-112\left(\frac{k}{n}\right)-15\right)\left(\frac{1}{2n}\right)\\
+            &=\sum_{k=1}^n\frac{6n^5+15n^4+10n^3-n}{60n^5}-\frac{2n^4+4n^3+2n^2}{n^4}\\
+            &+\frac{13\left(2n^3+3n^2+n\right)}{2n^3}-\frac{28n^2+n}{n^2}-\frac{15}{2}\\
+            &\underset{n\to\infty}\longrightarrow \frac{1}{10}-2+13-28-\frac{15}{2}\\
+            &=-\frac{122}{5}
+        \end{aligned}
+    \end{equation*}
+        Next, all $x\in[-2,1]$, $M_k=f\left(-2+\frac{3k}{n}\right)$ because the function is increasing, $f(x)$ achieves its maximum on the right boundary of each subinterval of the partition. We now evaluate $U(f,P_n)$ because \[\lim_{n\to\infty}U(f,P_n)=\int_{-2}^{1}f(x)\,dx\]
+    \begin{equation*}
+        \begin{aligned}
+            U(f,P_n)&=\sum_{k=1}^nf\left(-2+\frac{3k}{n}\right)\left(\frac{3}{n}\right)\\
+            &=\sum_{k=1}^n\left(\frac{81}{2}\left(\frac{k}{n}\right)^4-162\left(\frac{k}{n}\right)^3+162\left(\frac{k}{n}\right)^2-32\right)\left(\frac{3}{n}\right)\\
+            &=\sum_{k=1}^n\frac{81\left(6n^5+15n^4+10n^3-n\right)}{20n^5}-\frac{242\left(n^4+2n^3+n^2\right)}{2n^4}\\
+            &+\frac{81\left(2n^3+3n^2+n\right)}{n^3}-96\\
+            &\underset{n\to\infty}\longrightarrow \frac{243}{10}-\frac{242}{2}+162-96\\
+            &=-\frac{156}{5}
+        \end{aligned}
+    \end{equation*}
+
+    Finally, for $x\in[1,2]$, $m_k=f\left(1+\frac{k}{n}\right)$ because the function is decreasing, $f(x)$ achieves its minimum on the right boundary of each subinterval of the partition. We now evaluate $U(f,P_n)$
+    \begin{equation*}
+        \begin{aligned}
+            L(f,P_n)&=\sum_{k=1}^nf\left(1+\frac{k}{n}\right)\left(\frac{1}{n}\right)\\
+            &=\sum_{k=1}^n\left(\left(\frac{k}{n}\right)^4-18\left(\frac{k}{n}\right)^2-17\right)\left(\frac{1}{2n}\right)\\
+            &=\sum_{k=1}^n\frac{6n^5+15n^4+10n^3-n}{60n^5}-\frac{3\left(2n^3+3n^2+n\right)}{2n^3}-\frac{17}{2}\\
+            &\underset{n\to\infty}\longrightarrow \frac{1}{10}+\frac{17}{2}-3\\
+            &=\frac{28}{5}
+        \end{aligned}
+    \end{equation*}
+    Adding these together yeilds: \[
+\int_{-3}^{2}f(x)\,dx=-50.
+\]
+\end{proof}
